@@ -14,7 +14,9 @@ export default function DeviceList(){
     <div className="p-4">
       <div className="flex justify-between mb-4">
         <h1 className="text-2xl">Dispositivos</h1>
-        <button onClick={()=>nav('/devices/new')}
+        <button onClick={
+        console.log('Navegar para /devices/new');
+        ()=>nav('/devices/new')}
           className="bg-green-500 text-white px-3 py-1 rounded">+ Novo</button>
       </div>
       <table className="w-full table-auto border">
@@ -33,7 +35,10 @@ export default function DeviceList(){
               <td className="p-2">{d.status}</td>
               <td className="p-2">{d.owner?.username||'-'}</td>
               <td className="p-2">
-                <button onClick={()=>nav(`/devices/${d._id}`)}
+                <button onClick={
+                console.log('Navegar para /devices/' + d._id);
+                
+                ()=>nav(`/devices/${d._id}`)}
                   className="text-blue-600 hover:underline">Editar</button>
               </td>
             </tr>
